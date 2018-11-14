@@ -35,4 +35,4 @@ y_val=y_trian[:10000]
 partial_y_trian=y_trian[10000:]
 
 model.compile(optimizer='rmsprop',loss='binary_crossentropy',metrics=['acc'])
-history=model.fit(partial_x_trian,partial_y_trian,epochs=20,batch=512,validation_data=(x_val,y_val))
+history=model.fit(partial_x_trian,partial_y_trian,epochs=20,batch_size=512,validation_data=(x_val,y_val))
