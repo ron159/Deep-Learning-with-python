@@ -1,4 +1,4 @@
-from keras.datesets import imdb
+from keras.datasets import imdb
 import numpy as np
 from keras import models
 from keras import layers
@@ -25,8 +25,8 @@ model.add(layers.Dense(16,activation='relu'))
 model.add(layers.Dense(1,activation='sigmoid'))
 
 model.compile(optimizer='rmsprop',loss='binary_crossentropy',metrics=['accuracy'])      
-model.compile(optimizer=optimizers.RMSprop(1r=0.001),loss='binary_crossentropy',metrics=['accuracy'])   
-model.compile(optimizer=optimizers.RMSprop(1r=0.001),loss='binary_crossentropy',metrics=[metrics.binary_accuracy]) 
+model.compile(optimizer=optimizers.RMSprop(lr=0.001),loss='binary_crossentropy',metrics=['accuracy'])   
+model.compile(optimizer=optimizers.RMSprop(lr=0.001),loss='binary_crossentropy',metrics=[metrics.binary_accuracy]) 
 
 x_val=x_trian[:10000]
 partial_x_trian=x_trian[10000:] 
