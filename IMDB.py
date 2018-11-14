@@ -13,15 +13,15 @@ def vectorize_sequences(sequences,dimension=10000):
     for i,sequence in enumerate(sequences):
         results[i,sequence]=1.
     return results
- x_trian=vectorize_sequences(train_data)
- x_test=vectorize_sequences(test_data)
+x_trian=vectorize_sequences(train_data)
+x_test=vectorize_sequences(test_data)
 
- y_trian=np.asarray(train_labels).astype('float32')
- y_test=np.asarray(test_labels).astype('float32')
+y_trian=np.asarray(train_labels).astype('float32')
+y_test=np.asarray(test_labels).astype('float32')
 
 model=models.Sequential()
 model.add(layers.Dense(16,activation='relu',input_shape=(10000,)))
-model.add(layers.Dense(16.activation='relu'))
+model.add(layers.Dense(16,activation='relu'))
 model.add(layers.Dense(1,activation='sigmoid'))
 
 model.compile(optimizer='rmsprop',loss='binary_crossentropy',metrics=['accuracy'])      
